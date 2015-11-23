@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source "https://ruby.taobao.org"
 
 group :development do
   gem 'rake', '~> 10.0'
@@ -15,4 +15,5 @@ group :development do
   gem 'stringex', '~> 1.4.0'
 end
 
+gem 'puma'
 gem 'sinatra', '~> 1.4.2'
