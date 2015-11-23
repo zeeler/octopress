@@ -1,6 +1,6 @@
 source "https://ruby.taobao.org"
 
-group :development do
+group :production do
   gem 'rake', '~> 10.0'
   gem 'jekyll', '~> 2.0'
   gem 'octopress-hooks', '~> 2.2'
