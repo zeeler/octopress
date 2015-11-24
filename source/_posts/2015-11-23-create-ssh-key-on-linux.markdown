@@ -1,14 +1,13 @@
 ---
 layout: post
-title: "create ssh key on linux"
+title: "Linux上创建密钥登录方式的步骤"
 date: 2015-11-23 18:12:02 +0800
 comments: true
 categories: 
 ---
 
-## Linux上创建密钥登录方式的步骤
 
-### 1. 在Server创建密钥
+#### 1. 在Server创建密钥
 
 ```
 ssh-keygen -t rsa
@@ -21,7 +20,7 @@ mv id_rsa.pub authorized_keys
 chmod 600 *
 ```
 
-### 2. 将私钥下载到本地
+#### 2. 将私钥下载到本地
 
 ```
 mkdir ~/.ssh
@@ -29,7 +28,7 @@ cd ~/.ssh
 scp 用户名@服务器/用户名/.ssh/id_rsa 用户名@服务器
 ```
 
-### 3. 客户端~/.ssh目录下创建config，内容如下
+#### 3. 客户端~/.ssh目录下创建config，内容如下
 
 ```
 HostName 登录名称
@@ -45,7 +44,7 @@ HostName 登录名称
 chmod 600 *
 ```
 
-### 4. 验证是否能正常登录
+#### 4. 验证是否能正常登录
 
 ```
 ssh 登录名称
@@ -56,4 +55,7 @@ ssh 登录名称
 ```
 rm -f ~/.ssh/id_rsa
 ```
+
+#### 5. 如果要分配多个用户名，可以在服务器端重复1，2，3步骤，然后把新生成的id_rsa.pub内容添加到authorized_keys中。
+
 
